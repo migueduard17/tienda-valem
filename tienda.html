@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tienda en línea | VALEM Marroquinería</title>
+<meta name="description" content="Compra carteras, bolsos, morrales, fajones y accesorios VALEM. Precios en pesos colombianos.">
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="promo-bar">🚚 <b>Envío gratis</b> llevando 2 o más productos · <b>10% OFF</b> en compras mayores a $150.000 · <b>5% OFF</b> pagando por transferencia</div>
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="VALEM Marroquinería, inicio"><img src="img/logo.jpg" alt=""><span>VALEM</span></a>
+    <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-list">☰</button>
+    <ul id="nav-list"><li><a href="index.html">Inicio</a></li><li><a href="tienda.html" aria-current="page">Tienda en línea</a></li><li><a href="contacto.html">Contacto</a></li><li>
+  </div>
+</header>
+<main>
+
+<section class="page-title"><div class="wrap">
+  <p class="eyebrow">Catálogo 2026</p>
+  <h1>Tienda en línea</h1>
+  <p>Elige tu producto, pulsa <b>Compra ahora</b> y confirma tu pedido. Precios en pesos colombianos (COP).</p>
+</div></section>
+
+<section class="section" style="padding-top:36px">
+  <div class="wrap">
+    <div class="promos">
+      <div class="promo"><b>10%</b><span>de descuento en compras mayores a $150.000</span></div>
+      <div class="promo"><b>🚚</b><span>Envío gratis al llevar 2 o más productos</span></div>
+      <div class="promo"><b>5%</b><span>de descuento pagando de contado por transferencia</span></div>
+    </div>
+
+    <div class="toolbar">
+      <div class="chips" role="group" aria-label="Filtrar por categoría">
+        <button class="chip on" data-cat="todos" aria-pressed="true">Todos</button>
+        <button class="chip" data-cat="bolsos" aria-pressed="false">Carteras y bolsos</button>
+        <button class="chip" data-cat="morrales" aria-pressed="false">Morrales</button>
+        <button class="chip" data-cat="fajones" aria-pressed="false">Fajones</button>
+        <button class="chip" data-cat="accesorios" aria-pressed="false">Accesorios</button>
+      </div>
+      <div class="sort"><span id="count" style="margin-right:12px;color:var(--ink-soft);font-size:.9rem"></span>
+        <label class="sr" for="orden" style="position:absolute;left:-9999px">Ordenar</label>
+        <select id="orden"><option value="default">Ordenar: destacados</option><option value="asc">Precio: menor a mayor</option><option value="desc">Precio: mayor a menor</option></select>
+      </div>
+    </div>
+
+    <div class="grid" id="grid" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="section alt" id="pagos">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Métodos de pago</p><h2>Paga como prefieras</h2><p>Aceptamos varias formas de pago. Al confirmar tu pedido coordinamos el pago y el envío por WhatsApp.</p></div>
+    <div class="pay-grid">
+      <div class="pay"><div class="ic">🏦</div><b>Transferencia bancaria</b><span>5% OFF pagando de contado</span></div>
+      <div class="pay"><div class="ic">📱</div><b>Nequi / Daviplata</b><span>Pago inmediato desde el celular</span></div>
+      <div class="pay"><div class="ic">💳</div><b>Tarjeta débito / crédito</b><span>Visa, Mastercard y más</span></div>
+      <div class="pay"><div class="ic">🌐</div><b>PSE</b><span>Débito desde tu banco</span></div>
+      <div class="pay"><div class="ic">📦</div><b>Contra entrega</b><span>Pagas cuando lo recibes</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="m-name">
+  <div class="modal">
+    <button class="close" id="close" aria-label="Cerrar">×</button>
+    <div class="m-img"><img id="m-img" src="" alt=""></div>
+    <div class="m-body">
+      <form id="form-compra" novalidate>
+        <p class="eyebrow">Tu pedido</p>
+        <h3 id="m-name"></h3><p class="m-ref" id="m-ref"></p>
+        <div class="two">
+          <div class="field"><label for="nombre">Nombre completo</label><input id="nombre" autocomplete="name" required></div>
+          <div class="field"><label for="ciudad">Ciudad</label><input id="ciudad" autocomplete="address-level2" required></div>
+        </div>
+        <div class="field"><label>Cantidad</label>
+          <div class="qty"><button type="button" id="minus" aria-label="Menos">−</button><output id="qty">1</output><button type="button" id="plus" aria-label="Más">+</button></div>
+        </div>
+        <fieldset class="field methods"><legend>Método de pago</legend>
+          <label><input type="radio" name="pago" value="transferencia" checked> Transferencia (5% OFF)</label>
+          <label><input type="radio" name="pago" value="nequi"> Nequi / Daviplata</label>
+          <label><input type="radio" name="pago" value="tarjeta"> Tarjeta</label>
+          <label><input type="radio" name="pago" value="pse"> PSE</label>
+          <label><input type="radio" name="pago" value="contraentrega"> Contra entrega</label>
+        </fieldset>
+        <div class="summary" id="sum"></div>
+        <p class="err" id="err" role="alert"></p>
+        <button class="btn btn-primary btn-block" type="submit">Confirmar pedido</button>
+      </form>
+      <div class="ok" id="exito" hidden>
+        <div class="big">🎉</div>
+        <h3>¡Gracias, <span id="ok-name"></span>!</h3>
+        <p>Tu pedido quedó registrado (simulación). Envíalo por WhatsApp para coordinar el pago y la entrega.</p>
+        <div class="code" id="code"></div><br>
+        <a class="btn btn-wa" id="wa-order" target="_blank" rel="noopener" href="#">Enviar pedido por WhatsApp</a>
+        <p style="margin-top:14px"><button class="btn btn-ghost" id="ok-close" type="button">Seguir comprando</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <h4>VALEM Marroquinería</h4>
+        <p>Carteras, bolsos, morrales, fajones y accesorios con calidad, diseño y precios accesibles. Catálogo 2026.</p>
+      </div>
+      <div>
+        <h4>Navegación</h4>
+        <a href="index.html">Inicio</a><a href="tienda.html">Tienda en línea</a><a href="contacto.html">Contacto</a><a href="dofa.html">Matriz DOFA</a>
+      </div>
+      <div>
+        <h4>Escríbenos</h4>
+        <a href="https://www.instagram.com/valem.marroquineria" target="_blank" rel="noopener">@VALEM.MARROQUINERIA</a>
+      </div>
+    </div>
+    <div class="legal"><span>© 2026 VALEM Marroquinería</span><span>Sitio web con fines académicos · los pagos de la tienda son una simulación</span></div>
+  </div>
+</footer>
+<script src="js/products.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
